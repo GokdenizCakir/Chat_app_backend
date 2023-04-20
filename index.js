@@ -12,7 +12,7 @@ const { authCheck } = require('./middlewares/authCheck');
 require('dotenv').config();
 app.use(
   cors({
-    origin: 'https://fanciful-cajeta-394fc2.netlify.app/',
+    origin: '*',
     credentials: true,
   })
 );
