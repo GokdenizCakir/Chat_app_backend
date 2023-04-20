@@ -11,10 +11,7 @@ const AppError = require('./utils/AppError');
 const { authCheck } = require('./middlewares/authCheck');
 require('dotenv').config();
 app.use(
-  cors({
-    origin: '*',
-    credentials: true,
-  })
+  cors()
 );
 
 connectDB();
