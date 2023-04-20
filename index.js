@@ -35,7 +35,7 @@ const server = app.listen(process.env.PORT, () =>
   console.log(`Server running on port ${process.env.PORT}`)
 );
 
-const io = require('socket.io')(server, { cors: 'http://localhost:3000' });
+const io = require('socket.io')(server, { cors: process.env.CLIENT_URL });
 
 let users = [];
 
