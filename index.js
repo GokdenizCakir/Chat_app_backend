@@ -10,9 +10,7 @@ const { connectDB } = require('./utils/connectDB');
 const AppError = require('./utils/AppError');
 const { authCheck } = require('./middlewares/authCheck');
 require('dotenv').config();
-app.use(
-  cors()
-);
+app.use(cors({ origin: process.env.CLIENT_URL }));
 
 connectDB();
 
