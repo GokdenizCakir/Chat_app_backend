@@ -6,7 +6,7 @@ const { errorHandler } = require('./middlewares/errorHandler');
 const userRoutes = require('./routes/userRoutes');
 const conversationRoutes = require('./routes/conversationRoutes');
 const messageRoutes = require('./routes/messageRoutes');
-const { connectDB } = require('./utils/ConnectDB');
+const { connectDB } = require('./utils/connectDB');
 const AppError = require('./utils/AppError');
 const { authCheck } = require('./middlewares/authCheck');
 require('dotenv').config();
