@@ -10,7 +10,21 @@ const { connectDB } = require('./utils/connectDB');
 const AppError = require('./utils/AppError');
 const { authCheck } = require('./middlewares/authCheck');
 require('dotenv').config();
-app.use(cors({ origin: process.env.CLIENT_URL }));
+
+const allowedOrigins = ['http://localhost:3000', process.env.CLIENT_URL];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests from allowed origins
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  })
+);
 
 connectDB();
 
